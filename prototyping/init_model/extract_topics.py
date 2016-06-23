@@ -78,11 +78,21 @@ def extract_topics(corpus_path, num_topics):
 
     speech_hash = defaultdict(dict)
     for doc in token_dict.iterkeys():
+
+        pp.pprint('Processing: ' + str(doc))
+
         doc_blob = TextBlob(raw_text[doc])
         sentence_count = 0
         for sentence in doc_blob.sentences:
-            speech_hash[doc][sentence_count] = sentence
+            ''' strip punctuation from the sentence now '''
+            sentence_without_punctuation = str(sentence).translate(None, string.punctuation)
+            pp.pprint('Adding sentence: ' + sentence_without_punctuation)
+            speech_hash[doc][sentence_count] = sentence_without_punctuation
             sentence_count += 1
+
+        each_speech = speech_hash[doc]
+        speech_tfs = tfidf.fit_transform(each_speech.values())
+        print speech_tfs
 
         #print 'KEYS: ', speech_hash[doc].keys()
 
@@ -100,6 +110,7 @@ if __name__ == '__main__':
     stemmer = PorterStemmer()
     pp = pprint.PrettyPrinter(indent=2)
 
-    path = '/Users/smuddu/galvanize/capstone/data/Speeches/Obama'
-    extract_topics(path,20)
+    #path = '/Users/smuddu/galvanize/capstone/data/Speeches/Obama'
+    path = '/Users/smuddu/galvanize/capstone/data/Speeches/samples'
+    extract_topics(path,2)
     print len(token_dict)
