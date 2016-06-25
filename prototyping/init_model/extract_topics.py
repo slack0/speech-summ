@@ -31,9 +31,9 @@ raw_text = {}
 stemmer = PorterStemmer()
 pp = pprint.PrettyPrinter(indent=2)
 
-#path = '/Users/smuddu/galvanize/capstone/data/Speeches/Obama'
-corpus_path = '/Users/smuddu/galvanize/capstone/data/Speeches/samples'
-num_topics = 3
+corpus_path = '/Users/smuddu/galvanize/capstone/data/Speeches/Obama'
+#corpus_path = '/Users/smuddu/galvanize/capstone/data/Speeches/samples'
+num_topics = 10
 #extract_topics(path,3)
 #print len(token_dict)
 

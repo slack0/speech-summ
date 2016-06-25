@@ -1,0 +1,12 @@
+
+-- Summarize logic of the code
+-- Comments in the beginning of the subroutine -->
+  ---> explain what it is doing
+  ---> inputs
+  ---> outputs
+-- Consider lemmatizing
+-- token_dict --> file_to_string mapping rename
+
+
+-- Choose descriptive names
+-- 
