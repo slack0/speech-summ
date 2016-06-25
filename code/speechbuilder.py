@@ -44,11 +44,11 @@ class SpeechBuilder():
 
 
     def stringify_speech(self, raw_content):
-        '''
         Given raw contents read from files, clean up and return a string
         '''
 
     def cleanup_raw(self, raw_content):
+        '''
         '''
         Given raw content read from files, just do basic cleanup and return a string
         Do not remove carriage returns and newlines
